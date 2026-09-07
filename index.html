@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f3">
+  <title>El servidor que repite todo lo que le dices · Libro interactivo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wwwroot/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#reader">Ir al contenido del libro</a>
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar" aria-label="Índice del libro">
+      <div class="brand"><span class="brand__mark">P</span><span>Python</span></div>
+      <div class="book-meta"><span>LIBRO INTERACTIVO</span><strong>El servidor que<br>repite todo lo<br>que le dices</strong></div>
+      <nav class="toc" aria-label="Capítulos">
+        <p class="toc__label">Contenido</p>
+        <button class="toc__item is-active" data-page="0"><b>—</b><span>Portada e índice</span></button>
+        <button class="toc__item" data-page="1"><b>I</b><span>¿Qué es una API?</span></button>
+        <button class="toc__item" data-page="2"><b>II</b><span>La librería requests</span></button>
+        <button class="toc__item" data-page="3"><b>III</b><span>El reto (Colab)</span></button>
+      </nav>
+      <div class="reading-progress"><div><span>Tu avance</span><strong id="progress-label">1 de 4</strong></div><div class="progress-track"><span id="progress-bar"></span></div></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menu-button" aria-label="Abrir índice" aria-expanded="false">☰</button>
+        <p id="chapter-kicker">PORTADA · ÍNDICE</p>
+        <div class="topbar__tools">
+          <button class="icon-button" id="contrast-button" aria-label="Modo de lectura nocturna" title="Modo de lectura nocturna">◐</button>
+          <button class="icon-button" id="reset-button" aria-label="Reiniciar avance" title="Reiniciar avance">↺</button>
+        </div>
+      </header>
+
+      <section class="reader" id="reader" aria-live="polite">
+
+        <!-- 0 · Portada + Índice -->
+        <article class="spread is-visible" data-page="0">
+          <div class="page page--title">
+            <p class="kicker">Python · protocolo HTTP</p>
+            <div class="cover-art" aria-hidden="true">
+              <svg viewBox="0 0 460 120" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="20" y="34" width="92" height="52" rx="4"/>
+                <text x="66" y="60" font-family="DM Mono, monospace" font-size="11" stroke="none" fill="currentColor" text-anchor="middle">peticion.py</text>
+                <text x="66" y="76" font-family="DM Mono, monospace" font-size="9" stroke="none" fill="currentColor" text-anchor="middle" opacity=".55">requests.post()</text>
+                <path d="M112 60 h34" stroke-width="1.1"/>
+                <path d="M138 55 L146 60 L138 65" stroke-width="1.1"/>
+                <rect x="156" y="34" width="92" height="52" rx="4" stroke-dasharray="4 4"/>
+                <text x="202" y="60" font-family="DM Mono, monospace" font-size="11" stroke="none" fill="currentColor" text-anchor="middle">httpbin.org</text>
+                <text x="202" y="76" font-family="DM Mono, monospace" font-size="9" stroke="none" fill="currentColor" text-anchor="middle" opacity=".55">procesa y hace eco</text>
+                <path d="M248 68 h34" stroke-width="1.1"/>
+                <path d="M274 63 L282 68 L274 73" stroke-width="1.1"/>
+                <rect x="292" y="34" width="96" height="52" rx="4" stroke-width="2"/>
+                <text x="340" y="60" font-family="DM Mono, monospace" font-size="11" stroke="none" fill="currentColor" text-anchor="middle">respuesta.json()</text>
+                <text x="340" y="76" font-family="DM Mono, monospace" font-size="9" stroke="none" fill="currentColor" text-anchor="middle" opacity=".55">status 200</text>
+                <path d="M156 46 h-14" stroke-width="1.1" stroke-dasharray="3 4"/>
+                <path d="M400 60 h30" stroke-width="1.1"/>
+                <circle cx="440" cy="60" r="12"/>
+                <path d="M434 60 L438 65 L446 55" stroke-width="1.3"/>
+              </svg>
+            </div>
+            <h1>El servidor que<br>repite todo lo<br>que le dices</h1>
+            <hr class="cover-rule">
+            <p class="subtitle">Un libro interactivo sobre peticiones HTTP con Python y requests</p>
+            <p class="drop">Python es, quizás sin proponérselo, el lenguaje más usado para hablar con servicios web. Su librería <code>requests</code> reduce una petición HTTP completa —método, encabezados, cuerpo— a una sola línea de código, y su respuesta a un simple diccionario.</p>
+            <p>Eso no significa que no haya nada que entender debajo. Cada llamada a <code>requests.post()</code> dispara un ciclo completo de petición y respuesta, con un código de estado que dice si algo salió bien y un cuerpo que trae los datos de vuelta.</p>
+            <p>En este capítulo vas a mandar una petición real a un servidor real —<code>httpbin.org</code>— y vas a ver esa respuesta encender un LED fuera del propio código.</p>
+            <p class="page-num">1</p>
+          </div>
+          <div class="page page--index">
+            <h2>Tabla de contenido</h2>
+            <nav class="index-list" aria-label="Índice del libro">
+              <button class="toc__item index-link" data-page="1"><span>I. ¿Qué es una API?</span><i></i><b>pág. 3</b></button>
+              <button class="toc__item index-link" data-page="2"><span>II. La librería requests</span><i></i><b>pág. 5</b></button>
+              <button class="toc__item index-link" data-page="3"><span>III. El reto: enciende el LED</span><i></i><b>pág. 7</b></button>
+            </nav>
+            <div class="index-footer">
+              <p>Antes de empezar</p>
+              <ul class="kit-list">
+                <li>No necesitas instalar nada en tu computadora</li>
+                <li>El reto corre en <a href="https://colab.research.google.com/" target="_blank" rel="noopener" style="color:inherit">Google Colab</a>, en el navegador</li>
+                <li>Conocimientos previos: ninguno — el capítulo empieza desde cero</li>
+              </ul>
+              <figure class="video-embed">
+                <figcaption>Video · 15 min</figcaption>
+                <div class="video-embed__frame">
+                  <iframe src="https://www.youtube.com/embed/ES82kgVf7-4" title="Python Requests Library Tutorial" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <a href="https://www.youtube.com/watch?v=ES82kgVf7-4" target="_blank" rel="noopener">Python Requests Library Tutorial ↗</a>
+              </figure>
+              <button class="text-button" data-next>Comenzar la lectura <span>→</span></button>
+            </div>
+            <p class="page-num">2</p>
+          </div>
+        </article>
+
+        <!-- I · ¿Qué es una API? -->
+        <article class="spread" data-page="1" hidden>
+          <div class="page">
+            <p class="eyebrow">CAPÍTULO I · ≈ 4 MIN</p>
+            <h2>¿Qué es una API?</h2>
+            <p><strong>API</strong> —<em>Application Programming Interface</em>— es el conjunto de reglas que le permite a un programa pedirle algo a otro sin conocer su código interno. Una API web es, en concreto, un servidor que escucha peticiones HTTP y responde con datos, casi siempre en JSON.</p>
+            <div class="register-legend">
+              <div><strong>Cliente</strong><span>tu script de Python (o el navegador).</span></div>
+              <div><strong>Servidor</strong><span>la API que recibe la petición y decide qué responder.</span></div>
+              <div><strong>HTTP</strong><span>el protocolo de transporte: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>.</span></div>
+              <div><strong>JSON</strong><span>el formato en el que viajan los datos, en ambas direcciones.</span></div>
+            </div>
+            <p>Toda petición sigue el mismo ciclo:</p>
+            <pre><code>import requests
+
+r = requests.get("https://httpbin.org/get")
+print(r.status_code)   # 200
+print(r.json())        # dict con la respuesta</code></pre>
+            <div class="definition"><span>CICLO PETICIÓN–RESPUESTA</span><p>El cliente envía la petición, el servidor la procesa, y regresa un <em>status code</em> junto con un cuerpo. <code>r.status_code</code> te dice si salió bien; <code>r.json()</code> te da los datos.</p></div>
+            <p class="margin-note"><code>200</code> significa éxito, <code>404</code> que el recurso no existe, <code>500</code> que el servidor falló — llegan siempre en <code>respuesta.status_code</code>.</p>
+          </div>
+          <div class="page page--visual">
+            <p class="visual-label">SIMULA LA PETICIÓN</p>
+            <div class="state-controls" role="group" aria-label="Elige el método HTTP">
+              <button class="state-choice is-selected" id="method-get" data-method="get">GET <small>/get</small></button>
+              <button class="state-choice" id="method-post" data-method="post">POST <small>/post</small></button>
+            </div>
+            <div class="console">
+              <div class="console__bar"><span></span><span></span><span></span><b>terminal</b></div>
+              <div class="console__body">
+                <p>$ python peticion.py</p>
+                <p id="method-line">requests.get("https://httpbin.org/get")</p>
+                <p class="console-status is-ok" id="method-status">Status: 200 → sin cuerpo enviado, solo pides datos.</p>
+              </div>
+            </div>
+            <p class="interaction-hint">GET no manda cuerpo; POST sí, y httpbin te lo regresa dentro de "json".</p>
+            <p class="page-num">3</p>
+          </div>
+        </article>
+
+        <!-- II · La librería requests -->
+        <article class="spread" data-page="2" hidden>
+          <div class="page">
+            <p class="eyebrow">CAPÍTULO II · ≈ 4 MIN</p>
+            <h2>La librería requests</h2>
+            <pre><code>pip install requests</code></pre>
+            <p><code>requests.post()</code> hace tres cosas por dentro: arma la petición (encabezados y cuerpo), la envía por la red, y convierte la respuesta de vuelta a un diccionario de Python con <code>.json()</code>.</p>
+            <pre><code>import requests
+
+respuesta = requests.post(
+    "https://httpbin.org/post",
+    json={"led": "on", "mensaje": "hola"}
+)
+print(respuesta.status_code)
+print(respuesta.json())</code></pre>
+            <pre class="is-output"><code>200
+{'json': {'led': 'on', 'mensaje': 'hola'}}</code></pre>
+            <div class="definition ok"><span>QUÉ ES HTTPBIN</span><p><code>httpbin.org</code>, creado por Kenneth Reitz —el mismo autor de <code>requests</code>—, no hace nada más que eco: te regresa exactamente lo que le mandaste, dentro de la clave <code>"json"</code>.</p></div>
+            <p class="margin-note">Con <code>json=</code>, <code>requests</code> serializa el diccionario y agrega el encabezado <code>Content-Type: application/json</code> automáticamente.</p>
+          </div>
+          <div class="page page--visual">
+            <p class="visual-label">CONSTRUYE EL PAYLOAD</p>
+            <div class="borrow-demo">
+              <div class="borrow-owner">httpbin.org/post<small>recibe y hace eco</small></div>
+              <div class="borrow-slots" id="payload-slots"></div>
+            </div>
+            <div class="state-controls" role="group" aria-label="Agregar campos al JSON">
+              <button class="state-choice" id="add-led"><code>"led": "on"</code></button>
+              <button class="state-choice" id="add-msg"><code>"mensaje": "hola"</code></button>
+            </div>
+            <button class="text-button" id="clear-payload">Reiniciar payload <span>↺</span></button>
+            <div class="console">
+              <div class="console__bar"><span></span><span></span><span></span><b>terminal</b></div>
+              <div class="console__body">
+                <p class="console-status" id="payload-status">Sin campos todavía: agrega uno para armar el POST.</p>
+              </div>
+            </div>
+            <p class="interaction-hint">httpbin regresa exactamente lo que envías, dentro de la clave "json".</p>
+            <p class="page-num">5</p>
+          </div>
+        </article>
+
+        <!-- III · El reto (Colab) -->
+        <article class="spread" data-page="3" hidden>
+          <div class="page">
+            <p class="eyebrow">CAPÍTULO III · RETO EN GOOGLE COLAB</p>
+            <h2>El reto: enciende<br>el LED</h2>
+            <p>El siguiente programa manda <code>estado = "off"</code> a httpbin y, además, avisa a esta misma página con <code>window.parent.postMessage()</code>.</p>
+            <ol class="challenge-steps">
+              <li><b>Abre</b> el cuaderno de Colab, a la derecha.</li>
+              <li><b>Cambia</b> <code>estado = "off"</code> por <code>estado = "on"</code></li>
+              <li><b>Ejecuta</b> la celda y verifica que httpbin conteste <code>{'led': 'on'}</code>.</li>
+            </ol>
+            <div class="code-editor">
+              <div class="code-editor__bar"><span></span><span></span><span></span><b>reto.py · referencia</b></div>
+              <pre><code><span class="line-no">1</span>import requests
+<span class="line-no">2</span>from js import window
+<span class="line-no">3</span>
+<span class="line-no">4</span>estado = "off"  <span class="code-comment">// cambia esto a "on"</span>
+<span class="line-no">5</span>
+<span class="line-no">6</span>r = requests.post("https://httpbin.org/post", json={"led": estado})
+<span class="line-no">7</span>print("httpbin respondió:", r.json()["json"])
+<span class="line-no">8</span>
+<span class="line-no">9</span>window.parent.postMessage(estado, "*")</code></pre>
+            </div>
+            <hr class="chapter-divider">
+            <h3>Cómo viaja el mensaje</h3>
+            <p><code>postMessage</code> permite que dos ventanas se comuniquen aunque estén en dominios distintos. El cuaderno de Colab corre dentro de un <code>&lt;iframe&gt;</code>; al llamar <code>window.parent.postMessage(estado, "*")</code>, esta página —la ventana que contiene ese iframe— recibe el mensaje y actualiza el LED.</p>
+            <figure class="diagram">
+              <svg viewBox="0 0 420 130" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.3">
+                <rect x="6" y="6" width="408" height="118" rx="4"/>
+                <rect x="24" y="42" width="176" height="66" rx="3" stroke-dasharray="4 4"/>
+                <text x="112" y="34" font-family="DM Mono, monospace" font-size="10.5" stroke="none" fill="currentColor" text-anchor="middle">esta página (parent)</text>
+                <text x="112" y="78" font-family="DM Mono, monospace" font-size="10" stroke="none" fill="currentColor" text-anchor="middle">Colab (iframe)</text>
+                <text x="112" y="94" font-family="DM Mono, monospace" font-size="9.5" stroke="none" fill="currentColor" text-anchor="middle" opacity=".6">postMessage(estado)</text>
+                <path d="M200 72 h100" stroke-width="1.2"/>
+                <path d="M290 66 L300 72 L290 78" stroke-width="1.2"/>
+                <circle cx="352" cy="72" r="18"/>
+                <text x="352" y="110" font-family="DM Mono, monospace" font-size="9.5" stroke="none" fill="currentColor" text-anchor="middle">LED</text>
+              </svg>
+              <figcaption>COLAB (IFRAME) → VENTANA PADRE → LED</figcaption>
+            </figure>
+            <table class="compare-table">
+              <thead><tr><th>Método</th><th>¿Envía cuerpo?</th><th>Uso típico</th></tr></thead>
+              <tbody>
+                <tr><td>GET</td><td>No</td><td>Leer un recurso existente</td></tr>
+                <tr><td>POST</td><td>Sí</td><td>Enviar datos nuevos — este reto</td></tr>
+                <tr><td>PUT</td><td>Sí</td><td>Actualizar un recurso existente</td></tr>
+                <tr><td>DELETE</td><td>No</td><td>Borrar un recurso</td></tr>
+              </tbody>
+            </table>
+            <p class="margin-note">httpbin no guarda nada de lo que le mandas: solo confirma que tu petición llegó bien formada antes de que hables con una API de verdad.</p>
+          </div>
+          <div class="page page--visual">
+            <p class="visual-label">GOOGLE COLAB · RETO</p>
+         <pre><code>import requests
+
+estado = "off"   # 👈 Tu reto: escribe "on"
+
+# ==================================================
+# Envía el estado a la API
+# ==================================================
+url = "https://httpbin.org/post"
+
+respuesta = requests.post(
+    url,
+    json={"led": estado}
+)
+
+# ==================================================
+# Comprueba la respuesta
+# ==================================================
+print("Código de respuesta:", respuesta.status_code)
+
+datos = respuesta.json()
+
+print("Datos enviados a la API:")
+print(datos["json"])
+
+if estado == "on" and datos["json"]["led"] == "on":
+    print("\n🎉 ¡RETO SUPERADO!")
+    print("🔴 El LED debería estar encendido.")
+else:
+    print("\n💡 Aún no.") </pre></code>
+            <a class="text-button" href="https://colab.research.google.com/drive/1WUjHV60AzoKohuBeYH_aDlzlB1qboMOf?usp=sharing" target="_blank" rel="noopener">Abrir el cuaderno en Colab <span>↗</span></a>
+            <p class="interaction-hint">Colab no permite mostrarse dentro de otras páginas; ábrelo en una pestaña nueva para ejecutar el reto.</p>
+            
+            <div class="resource-stack">
+              <a class="resource-link" href="https://requests.readthedocs.io/" target="_blank" rel="noopener"><span>DOCUMENTACIÓN</span>requests, la librería oficial <b>↗</b></a>
+              <a class="resource-link" href="https://httpbin.org/" target="_blank" rel="noopener"><span>LABORATORIO</span>httpbin.org <b>↗</b></a>
+            </div>
+            <button class="text-button" id="restart-book">Volver a la portada <span>↺</span></button>
+            <p class="page-num">7</p>
+          </div>
+        </article>
+
+      </section>
+
+      <footer class="reader-controls">
+        <button class="nav-button" id="previous-page" disabled><span>‹</span> Anterior</button>
+        <div class="pagination" id="pagination" aria-label="Página actual"></div>
+        <button class="nav-button nav-button--next" id="next-page">Siguiente <span>›</span></button>
+      </footer>
+    </main>
+  </div>
+  <div class="sidebar-scrim" id="sidebar-scrim"></div>
+  <script src="wwwroot/app.js"></script>
+</body>
+</html>
